@@ -1,0 +1,39 @@
+section{
+    background: url(./bg2.jpg) no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+  }
+  
+  .main{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+   padding-top: 10vh;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+   
+  }
+  
+  .login-button,
+  .signup-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 4px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  
+  .login-button:hover,
+  .signup-button:hover {
+    background-color: #45a049;
+  }
