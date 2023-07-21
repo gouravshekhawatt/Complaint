@@ -9,8 +9,11 @@ import {
 } from "react-router-dom";
 import LandingPage from './screens/LandingPage/LandingPage';
 import Footer from './components/Footer/footer.js';
+import LoginScreen from './screens/LoginScreen/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import Complaint from './screens/LandingPage/Complaint/Complaint';
-import ViewComplaints from "./components/ViewComplaints/ViewComplaints"
+import ViewComplaints from "./components/ViewComplaints/ViewComplaints";
+
 
 
 function App() {
@@ -23,6 +26,8 @@ function App() {
   <Route exact path='/' element={<LandingPage/>}/>
   <Route exact path='/Complaint' element={<Complaint/>}/>
   <Route exact path='/ViewComplaints' element={<ViewComplaints/>}/>
+  <Route exact path='/login' element={<LoginScreen/>}/>
+  <Route exact path='/register' element={<RegisterScreen/>}/>
   </Routes>
 </main>
 
