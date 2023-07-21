@@ -1,8 +1,20 @@
 import React from 'react';
+import  { useEffect } from 'react'
 import "./LandingPage.css";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const LandingPage = () => {
+//this is to redirect to home if already loggede in
+  const navigate = useNavigate();
+useEffect(() => {
+  const userInfo = localStorage.getItem("userInfo");
+
+  if (userInfo) {
+    navigate("/ViewComplaints");
+  }
+}, [navigate]);
   return (
     <div>
       <section>

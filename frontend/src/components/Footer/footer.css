@@ -1,9 +1,11 @@
-.footer{
+.footer {
     width: 100vw;
     height: 5vh;
-    position: relative;
+    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    background-color:transparent; /* Add any desired background color for the footer */
+  }
+  

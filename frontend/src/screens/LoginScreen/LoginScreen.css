@@ -12,6 +12,7 @@ body{
   height: 100vh;
   overflow: hidden;
 }
+
 .center{
   position: absolute;
   top: 50%;

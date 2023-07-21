@@ -4,6 +4,7 @@ const app = express();
 const dotenv  =require("dotenv");
 const userRoutes = require("./Routes/userRoutes");
 const mongoose = require('mongoose');
+const cors = require("cors");
 const {notFound, errorHandler } = require("./middlewares/errorMiddleware");
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -21,7 +22,7 @@ mongoose.connect("mongodb+srv://gouravsingh2103:123456781@cluster0.gjzjfon.mongo
 
 
 app.use(express.json());
-
+app.use(cors());
 app.get("/", (req,res) => {
     res.send("API is running..");
 });

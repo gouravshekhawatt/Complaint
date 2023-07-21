@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState  } from 'react'
 import "./LoginScreen.css"
 import { Link } from 'react-router-dom';
 import axios from "axios";
-
+import Loading from '../../components/Loader/Loading';
+import ErrorMessage from '../../components/ErrorMessage';
 
 const LoginScreen = () => {
 
@@ -10,6 +11,9 @@ const[email,setEmail] = useState("");
 const[password,setPassword] = useState("");
 const[error,setError] = useState(false);
 const[loading,setLoading] = useState(false);
+
+
+
 
 //calling api
 const submitHandler = async(e) => {
@@ -25,7 +29,7 @@ const submitHandler = async(e) => {
 
         setLoading(true);
 
-        const  { data } = await axios.post("/api/users/login",{
+        const  { data } = await axios.post("http://localhost:5000/api/users/login",{
             email,password
         },config);
 
@@ -41,15 +45,22 @@ const submitHandler = async(e) => {
 
         
     } catch (error) {
-        setError(error.response.data.message);
+      setError(error.response.data.message);
+      setLoading(false);
     }
 };
 
   return (
+    <>
     <div>
+    {loading && <Loading/>}
+       
     <div className="center">
+    
       <h1>Login</h1>
       <form  onSubmit={submitHandler}>
+      {error && <ErrorMessage message={error}/> }
+    
         <div className="txt_field">
           <input type="text" 
             value={email}
@@ -73,8 +84,10 @@ const submitHandler = async(e) => {
         </div>
       </form>
     </div>
-
+    
   </div>
+ 
+  </>
   )
 }
 
