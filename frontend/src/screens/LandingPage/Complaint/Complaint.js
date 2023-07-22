@@ -3,12 +3,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Complaint.css';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../actions/userActions";
 
 function Complaint() {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+const userLogin = useSelector((state) => state.userLogin);
+
+
+
+
+
   const Logout = () => {
-    localStorage.removeItem("userInfo");
+   dispatch(logout());
     navigate("/");
   }
   return (

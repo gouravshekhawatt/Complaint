@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10vh ;
+  margin-top: 3vh ;
 
 }
 
@@ -21,6 +21,7 @@
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
+  padding-bottom: 15px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -118,7 +119,7 @@ form input[type="radio"] {
 
 form .registration-button {
   height: 45px;
-  margin: 35px 0;
+  margin-top: 11px;
 }
 
 form .registration-button input {

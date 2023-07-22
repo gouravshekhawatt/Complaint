@@ -9,7 +9,7 @@
 }
 .wrapper5{
   position: absolute;
-  top: -45px;
+  top: -155px;
   transform: scale(1.5);
 }
 .loader{
@@ -28,7 +28,7 @@
 }
 .text{
   position: absolute;
-  bottom: -85px;
+  bottom: 25px;
   font-size: 25px;
   font-weight: 400;
   font-family: 'Poppins',sans-serif;

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './RegisterScreen.css';
 import { useState } from 'react';
 import ErrorMessage from '../../components/ErrorMessage';
-import axios from "axios";
 import Loading from '../../components/Loader/Loading';
+import { register } from '../../actions/userActions';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+ 
 
 
 function RegisterScreen() {
@@ -19,54 +22,54 @@ function RegisterScreen() {
   const [gender, setGender] = useState(null);
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState(null);
- 
+const[message,setMessage] = useState(null);
 
-const [error,setError] = useState(false)
-const [loading,setLoading] = useState(false)
+
+
+  const dispatch = useDispatch();
+
+  const userRegister = useSelector((state) => state.userRegister);
+  const {loading , error , userInfo} = userRegister;
+
+
+
+
+
 
 
 const submitHandler = async (e) => {
   e.preventDefault();
-  console.log(gender);
+  
 
   // Checking if the password and confirm password match
   if (password !== confirmpassword) {
     setMessage("Password do not match");
   } else {
-    setMessage(null);
+    dispatch(register( name,email, password,gender, division,location,number))
   }
 
-  try {
-    // Calling API
-    const config = {
-      headers: { 'Content-Type': "application/json" },
-    };
 
-    setLoading(true);
 
-    const { data } = await axios.post("http://localhost:5000/api/users/register", {
-      name,email, password,gender, division,location,number
-    }, config);
 
-    console.log(data);
 
-    // Saving data in local storage
-    localStorage.setItem("userInfo", JSON.stringify(data));
-    setLoading(false);
-  } catch (error) {
-    // setError(error.response.data.message);
-    setLoading(false);
-  }
 };
+
+
+const navigate = useNavigate();
+useEffect(() => {
+
+  if(userInfo){
+    navigate("/Complaint")
+  }
+},[navigate,userInfo])
 
   return (
     <>
-     {loading && <Loading/>}
+    
     <div className="registration-block">
      
     <div className="registration-container">
-      <div className="registration-title">Registration</div>
+    {loading && <Loading/>}<div className="registration-title">Registration</div>
       {message && <ErrorMessage message={message}/> }
       <div className="registration-content">
         <form onSubmit={submitHandler}>
