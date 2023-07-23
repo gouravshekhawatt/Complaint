@@ -1,10 +1,12 @@
 // DetailsPage.js
 import React from 'react';
 import notes from "../../data/notes";
+import Header from '../Header/Header';
 
 const DetailsPage = () => {
   return (
     <div className="details-container">
+        <Header/>
       <h2>Details Page</h2>
       {notes.map((item) => (
         <div key={item.id}> {/* Assuming each item in the notes array has a unique "id" property */}

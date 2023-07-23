@@ -35,7 +35,7 @@ const submitHandler = async(e) => {
 
   return (
     <>
-    <div>
+    <div className='loginbody'>
     {loading && <Loading/>}
        
     <div className="center">

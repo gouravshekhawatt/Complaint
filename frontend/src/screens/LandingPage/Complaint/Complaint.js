@@ -3,35 +3,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Complaint.css';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../../actions/userActions";
+import Header from "../../../components/Header/Header"
 
 function Complaint() {
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-const userLogin = useSelector((state) => state.userLogin);
-
-
-
-
-
   const Logout = () => {
-   dispatch(logout());
+    localStorage.removeItem("userInfo");
     navigate("/");
   }
   return (
-    <div className='Container'>
-        <div className="container1">
-      <div className="page">
-        <div className="heading">Welcome</div>
+  <div className="bggg">
+    
+    <Header/>
+    <div className="sidebar">
+  
+     
+      <div className='btnLink'>
+        <Link to="/ViewComplaints">
+          <button className='btn2'>Profile</button>
+        </Link>
+      </div>
+      <div className='btnLink'>
+        <Link to="/AddComplaint">
+          <button className='btn2'>Add Complaint</button>
+        </Link>
       </div>
       <div className='btnLink'>
         <Link to="/ViewComplaints">
           <button className='btn2'>View Complaints</button>
         </Link>
       </div>
+     
       <div className='btnLink'>
         <Link to="/">
           <button onClick= {Logout}className='btn2'>Logout</button>
@@ -39,6 +42,7 @@ const userLogin = useSelector((state) => state.userLogin);
       </div>
       </div>
     </div>
+   
   );
 }
 

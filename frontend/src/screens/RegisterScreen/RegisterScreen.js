@@ -6,6 +6,7 @@ import Loading from '../../components/Loader/Loading';
 import { register } from '../../actions/userActions';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Header from '../../components/Header/Header';
  
 
 
@@ -64,10 +65,10 @@ useEffect(() => {
 },[navigate,userInfo])
 
   return (
-    <>
-    
+    <div className='registerbody'>
+      <Header/>
     <div className="registration-block">
-     
+  
     <div className="registration-container">
     {loading && <Loading/>}<div className="registration-title">Registration</div>
       {message && <ErrorMessage message={message}/> }
@@ -162,7 +163,7 @@ useEffect(() => {
       </div>
     </div>
     </div>
-    </>
+    </div>
   );
 }
 

@@ -6,15 +6,15 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.registerbody{
+.complaintform{
   margin: 0;
   padding: 0;
   background: linear-gradient(120deg,#2980b9, #8e44ad);
-  height: 100vh;
+  height: 150vh;
   overflow: hidden;
 }
 
-.registration-block{
+.complaintform-block{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
 
 }
 
-.registration-container {
+.complaintform-container {
   
   max-width: 1100px;
   width: 100%;
@@ -33,13 +33,13 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.registration-title {
+.complaintform-title {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
 
-.registration-title::before {
+.complaintform-title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -50,25 +50,25 @@
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.registration-content form .registration-user-details {
+.complaintform-content form .complaintform-user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
 
-form .registration-user-details .registration-input-box {
+form .complaintform-user-details .complaintform-input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
-form .registration-input-box span.registration-details {
+form .complaintform-input-box span.complaintform-details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-.registration-user-details .registration-input-box input {
+.complaintform-user-details .complaintform-input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -79,31 +79,53 @@ form .registration-input-box span.registration-details {
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
+.complaintform-user-details .complaintform-input-box select {
+  height: 45px;
+  width: 40vw;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.complaintform-user-details .complaintform-input-box textarea {
+  height: 45px;
+  width: 40vw;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
 
-.registration-user-details .registration-input-box input:focus,
-.registration-user-details .registration-input-box input:valid {
+.complaintform-user-details .complaintform-input-box input:focus,
+.complaintform-user-details .complaintform-input-box input:valid {
   border-color: #9b59b6;
 }
 
-form .registration-gender-details .registration-gender-title {
+form .complaintform-gender-details .complaintform-gender-title {
   font-size: 20px;
   font-weight: 500;
 }
 
-form .registration-category {
+form .complaintform-category {
   display: flex;
   width: 80%;
   margin: 14px 0;
   justify-content: space-between;
 }
 
-form .registration-category label {
+form .complaintform-category label {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-form .registration-category label .registration-dot {
+form .complaintform-category label .complaintform-dot {
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -113,9 +135,9 @@ form .registration-category label .registration-dot {
   transition: all 0.3s ease;
 }
 
-#dot-1:checked ~ .registration-category label .one,
-#dot-2:checked ~ .registration-category label .two,
-#dot-3:checked ~ .registration-category label .three {
+#dot-1:checked ~ .complaintform-category label .one,
+#dot-2:checked ~ .complaintform-category label .two,
+#dot-3:checked ~ .complaintform-category label .three {
   background: #9b59b6;
   border-color: #d9d9d9;
 }
@@ -124,12 +146,12 @@ form input[type="radio"] {
   display: none;
 }
 
-form .registration-button {
+form .complaintform-button {
   height: 45px;
   margin-top: 11px;
 }
 
-form .registration-button input {
+form .complaintform-button input {
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -143,36 +165,36 @@ form .registration-button input {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-form .registration-button input:hover {
+form .complaintform-button input:hover {
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
 @media (max-width: 584px) {
-  .registration-container {
+  .complaintform-container {
     max-width: 100%;
   }
 
-  form .registration-user-details .registration-input-box {
+  form .complaintform-user-details .complaintform-input-box {
     margin-bottom: 15px;
     width: 100%;
   }
 
-  form .registration-category {
+  form .complaintform-category {
     width: 100%;
   }
 
-  .registration-content form .registration-user-details {
+  .complaintform-content form .complaintform-user-details {
     max-height: 300px;
     overflow-y: scroll;
   }
 
-  .registration-user-details::-webkit-scrollbar {
+  .complaintform-user-details::-webkit-scrollbar {
     width: 5px;
   }
 }
 
 @media (max-width: 459px) {
-  .registration-container .registration-content .registration-category {
+  .complaintform-container .complaintform-content .complaintform-category {
     flex-direction: column;
   }
 }

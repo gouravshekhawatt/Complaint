@@ -3,6 +3,7 @@ import  { useEffect } from 'react'
 import "./LandingPage.css";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 
 const LandingPage = () => {
@@ -23,7 +24,9 @@ useEffect(() => {
 
   return (
     <div>
+    
       <section>
+      <Header/>
         <div className="main">
           <h1>Network Complaint Management System</h1>
         </div>
