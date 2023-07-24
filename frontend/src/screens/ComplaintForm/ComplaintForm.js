@@ -5,6 +5,9 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loader/Loading";
 
 import Header from "../../components/Header/Header";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createNoteAction } from "../../actions/notesActions";
 
 function ComplaintForm() {
   const [email, setEmail] = useState("");
@@ -17,10 +20,49 @@ function ComplaintForm() {
 
   const [message, setMessage] = useState(null);
 
-  const loading = false;
+
+
+
+
+
+
+
+
+
+
+  const dispatch = useDispatch();
+
+  const noteCreate = useSelector((state) => state.noteCreate);
+  const { loading,error, note} = noteCreate;
+
+  console.log(note);
+
+  const resetHandler = () => {
+    setEmail("");
+setName("");
+setlocation("");
+setdivision("");
+setmyid("");
+setNumber("");
+
+  } 
+
+
+
+ 
+  const navigate = useNavigate();
+
+
+
   const submitHandler = (e) => {
     e.preventDefault();
 
+
+    dispatch(createNoteAction(name,email,division,location))
+    resetHandler();
+
+
+    navigate("/ViewComplaints")
     //////categories/////
 
     const data = {
@@ -32,7 +74,7 @@ function ComplaintForm() {
       problemDescription: problemDescription,
     };
 
-    console.log(data);
+    
     // Send the data to the server-side component
     // ...
 
@@ -46,6 +88,10 @@ function ComplaintForm() {
     setSelectedSubcategoryLevel3("");
     setDescribeProblem(false);
     setProblemDescription("");
+
+
+
+
   };
 
   ////////////////////////////////////
@@ -199,13 +245,28 @@ function ComplaintForm() {
     setProblemDescription(problemDescription);
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
   return (
     <div className="complaintform">
       <Header />
       <div className="complaintform-block">
         <div className="complaintform-container">
           {loading && <Loading />}
-          <div className="complaintform-title">Registration</div>
+          <div className="complaintform-title">File Complaint</div>
           {message && <ErrorMessage message={message} />}
           <div className="complaintform-content">
             <form onSubmit={submitHandler}>

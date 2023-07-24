@@ -6,6 +6,7 @@ const getNotes = asyncHandler(
 
         const notes = await Note.find({user: req.user._id});
         res.json(notes);
+        
 });
 
 
@@ -46,10 +47,11 @@ const getNoteById = asyncHandler(async(req,res) =>
     else{
         res.status(404).json({
             message:"Note not found"
+            
         });
     }
 
-
+res.json(note);
 
 });
 

@@ -1,6 +1,5 @@
 
 import './App.css';
-import Header from "./components/Header/Header.js";
 import {
   BrowserRouter,
   Routes,
@@ -30,6 +29,7 @@ function App() {
   <Route exact path='/ViewComplaints' element={<ViewComplaints/>}/>
   <Route exact path='/login' element={<LoginScreen/>}/>
   <Route exact path='/register' element={<RegisterScreen/>}/>
+  <Route exact path='/ComplaintForm' element={<ComplaintForm/>}/>
   </Routes>
 </main>
 
