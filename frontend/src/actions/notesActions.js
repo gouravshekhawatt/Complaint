@@ -18,7 +18,7 @@ export const listNotes = () => async (dispatch , getState) => {
         }
 
 
-        const { data } = await axios.get("/api/notes" , config);
+        const { data } = await axios.get("http://localhost:5000/api/notes" , config);
 
 
 
@@ -64,7 +64,7 @@ export const listNotes = () => async (dispatch , getState) => {
           }
   
   
-          const { data } = await axios.post("/api/notes/create" , {name,email,division,location},
+          const { data } = await axios.post("http://localhost:5000/api/notes/create" , {name,email,division,location},
           config);
   
   

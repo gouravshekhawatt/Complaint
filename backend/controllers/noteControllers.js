@@ -51,7 +51,7 @@ const getNoteById = asyncHandler(async(req,res) =>
         });
     }
 
-res.json(note);
+
 
 });
 
