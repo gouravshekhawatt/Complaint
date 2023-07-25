@@ -11,6 +11,7 @@ function Complaint() {
   const Logout = () => {
     localStorage.removeItem("userInfo");
     navigate("/");
+    window.location.reload();
   }
   return (
   <div className="bggg">

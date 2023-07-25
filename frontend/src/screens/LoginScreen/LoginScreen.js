@@ -25,6 +25,7 @@ useEffect(() => {
 
   if(userInfo){
     navigate("/Complaint")
+    window.location.reload();
   }
 },[navigate,userInfo])
 //calling api
@@ -36,7 +37,7 @@ const submitHandler = async(e) => {
   return (
     <>
     <div className='loginbody'>
-    {loading && <Loading/>}
+    {loading && <Loading />}
        
     <div className="center">
     

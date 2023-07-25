@@ -61,6 +61,7 @@ useEffect(() => {
 
   if(userInfo){
     navigate("/Complaint")
+    window.location.reload();
   }
 },[navigate,userInfo])
 
