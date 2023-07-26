@@ -37,7 +37,7 @@ font-family: 'Ubuntu', sans-serif; */
   font-size: 20px;
   border: none;
   cursor: pointer;
- width: 15vw;
+ width: 13vw;
   
   border-radius: 7px;
 
@@ -71,5 +71,32 @@ font-family: 'Ubuntu', sans-serif; */
     justify-content: space-evenly;
     border-radius: 24px;
 
+
+}
+
+@media (max-width: 500px){
+
+.btn2{
+  width: 92vw;
+}
+
+
+.sidebar{
+  width: 95vw;
+}
+
+
+}
+
+@media (max-width: 1000px){
+
+  .btn2{
+    width: 92vw;
+  }
+  
+  
+  .sidebar{
+    width: 95vw;
+  }
 
 }

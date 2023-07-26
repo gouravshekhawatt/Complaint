@@ -5,3 +5,54 @@
     width: 100vw;
     height: 100vh;
 }
+
+.details-container9 h2{
+    color: white;
+    font-size: 30px;
+    padding: 46px;
+}
+
+.containdata{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2vh;
+
+}
+
+.containdata1{
+    border-radius: 15px;
+    width: 70vw;
+    background: #1e05374d;
+    margin-bottom: 5vh;
+}
+
+.containdata2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+}
+
+.containerFont{
+    color: white;
+    font-size: 20px;
+    font-family: montserrat;
+
+}
+.containerFont strong{
+    color: black;
+    font-family: montserrat;
+    
+}
+
+.complainterror{
+    text-align:center ;
+    font-size: 25px;
+    color: black;
+    margin-top: 5vh;
+}

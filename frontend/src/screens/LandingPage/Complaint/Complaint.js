@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React , { useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import {  useSelector } from "react-redux";
 import './Complaint.css';
 import { useNavigate } from 'react-router-dom';
 import Header from "../../../components/Header/Header"
@@ -13,6 +14,17 @@ function Complaint() {
     navigate("/");
     window.location.reload();
   }
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+   useEffect(() => {
+   
+    if (!userInfo) {
+      navigate("/");
+      
+    }
+  }, [ navigate, userInfo]);
   return (
   <div className="bggg">
     

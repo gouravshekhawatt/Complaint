@@ -46,7 +46,7 @@ const submitHandler = async (e) => {
   if (password !== confirmpassword) {
     setMessage("Password do not match");
   } else {
-    dispatch(register( name,email, password,gender, division,location,number))
+    dispatch(register( name,email, password,gender, division,location,number , myid))
   }
 
 
@@ -72,7 +72,7 @@ useEffect(() => {
   
     <div className="registration-container">
     {loading && <Loading/>}<div className="registration-title">Registration</div>
-      {message && <ErrorMessage message={message}/> }
+      {message && <ErrorMessage message={error}/> }
       <div className="registration-content">
         <form onSubmit={submitHandler}>
           <div className="registration-user-details">

@@ -184,7 +184,7 @@ form .complaintform-button input:hover {
   }
 
   .complaintform-content form .complaintform-user-details {
-    max-height: 300px;
+    max-height: 700px;
     overflow-y: scroll;
   }
 
@@ -197,4 +197,6 @@ form .complaintform-button input:hover {
   .complaintform-container .complaintform-content .complaintform-category {
     flex-direction: column;
   }
+
+ 
 }
