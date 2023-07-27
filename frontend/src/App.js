@@ -9,6 +9,7 @@ import {
 import LandingPage from './screens/LandingPage/LandingPage';
 import Footer from './components/Footer/footer.js';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
+import ProfileScreen from './screens/ProfileScreen/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import Complaint from './screens/LandingPage/Complaint/Complaint';
 import ViewComplaints from "./components/ViewComplaints/ViewComplaints";
@@ -29,6 +30,7 @@ function App() {
   <Route exact path='/ViewComplaints' element={<ViewComplaints/>}/>
   <Route exact path='/login' element={<LoginScreen/>}/>
   <Route exact path='/register' element={<RegisterScreen/>}/>
+  <Route exact path='/profile' element={<ProfileScreen/>}/>
   <Route exact path='/ComplaintForm' element={<ComplaintForm/>}/>
   </Routes>
 </main>

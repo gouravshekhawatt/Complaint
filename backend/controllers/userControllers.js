@@ -80,4 +80,60 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser };
+
+
+
+///Update User Profile//
+
+const updateUserProfile  =  asyncHandler(async (req, res) => {
+
+const user =  await User .findById(req.user._id);
+
+if(user){
+
+  user.name = req.body.name || user.name;
+  user.email = req.body.email || user.email;
+  user.myid = req.body.myid || user.myid;
+  user.number = req.body.number || user.number;
+  
+  user.division = req.body.division || user.division;
+  
+ 
+
+  if(req.body.password){
+
+    user.password = req.body.password
+  }
+
+  const updatedUser = await user.save();
+
+  res.json({
+    _id: updatedUser._id,
+    myid: updatedUser.myid,
+    name: updatedUser.name,
+    email: updatedUser.email,
+    number: updatedUser.number,
+    UserId: updatedUser.UserId,
+    division: updatedUser.division,
+    location: updatedUser.location,
+    gender: updatedUser.gender,
+
+    isAdmin: user.isAdmin,
+    token: generateToken(user._id),
+
+  });
+}
+
+  else{
+    res.status(404)
+    throw new Error ("User not Found!!");
+  }
+
+
+
+
+});
+
+
+
+module.exports = { registerUser, authUser , updateUserProfile };

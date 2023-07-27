@@ -1,0 +1,174 @@
+.bgggg{
+    background: url(../LandingPage/bg2.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Roboto", sans-serif;
+    
+  }
+
+
+ /* ProfileScreen.css */
+
+.profile-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+   
+}
+  
+  .profile-container1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    width: 80vw;
+    height: 80vh;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    flex-wrap: wrap;
+
+  }
+
+
+  
+  .profile-nav {
+    flex: 0 0 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items:center;
+    padding: 10px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    border-radius: 5px;
+  
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-image: url(./usericon.jpg);
+    
+    background-position: center;
+    background-size: cover;
+  }
+
+  
+  .profile-pic img {
+    
+  }
+  .profile-nav-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .profile-nav-item.active {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .profile-form {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .profile-form-section {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-form-section h2 {
+    margin-top: 5vh;
+    font-size: 5vh;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .profile-form-section.show {
+    display: block;
+  }
+  
+
+
+  .profile-form-section form {
+
+    margin-top: 5vh;
+  }
+
+  .profile-form-section  .form-group label {
+
+    display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  }
+
+  .profile-form-section  .form-group input {
+    height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+}
+
+
+.profile-form-section  .form-group select{
+
+    height: 45px;
+  width: 50%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+
+}
+
+
+
+.profile-form-section   button{
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+font-size: 20px;
+
+cursor: pointer;
+width: 13vw;
+margin-top: 3vh;
+border: 1px solid #ccc;
+border-radius: 7px;
+}
+
+
+.button-radius{
+    border-radius: 7px;
+}
+
+
+
+.profile-nav-item{
+    display: block;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+  font-weight: 500;
+  margin-bottom: 5px;}
+
+
+
+
+
