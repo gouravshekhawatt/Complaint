@@ -18,9 +18,9 @@ function ComplaintForm() {
 
   const [number, setNumber] = useState("");
 
-  const [message, setMessage] = useState(null);
+  
 
-
+const message = null;
 
 
 
@@ -65,14 +65,14 @@ setNumber("");
     navigate("/ViewComplaints")
     //////categories/////
 
-    const data = {
-      category: category,
-      subcategoriesLevel1: selectedSubcategoryLevel1,
-      subcategoriesLevel2: selectedSubcategoryLevel2,
-      subcategoriesLevel3: selectedSubcategoryLevel3,
-      describeProblem: describeProblem,
-      problemDescription: problemDescription,
-    };
+    // const data = {
+    //   category: category,
+    //   subcategoriesLevel1: selectedSubcategoryLevel1,
+    //   subcategoriesLevel2: selectedSubcategoryLevel2,
+    //   subcategoriesLevel3: selectedSubcategoryLevel3,
+    //   describeProblem: describeProblem,
+    //   problemDescription: problemDescription,
+    // };
 
     
     // Send the data to the server-side component
@@ -267,7 +267,7 @@ setNumber("");
         <div className="complaintform-container">
           {loading && <Loading />}
           <div className="complaintform-title">File Complaint</div>
-          {message && <ErrorMessage message={message} />}
+          {message && <ErrorMessage message={error} />}
           <div className="complaintform-content">
             <form onSubmit={submitHandler}>
               <div className="complaintform-user-details">
