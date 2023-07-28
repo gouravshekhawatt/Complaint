@@ -45,6 +45,8 @@ function ProfileScreen() {
     }
   },[navigate,userInfo])
 
+
+  
 const SubmitHandler = (e) => {
 
     e.preventDefault();
@@ -123,6 +125,24 @@ const SubmitHandler = (e) => {
             </form>
           </div>
         );
+        case 'security':
+        return (
+          <div className="profile-form-section show">
+            <h2>Security & Authentication</h2>
+            <form>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Confirm Password</label>
+                <input type="text" id="password" name="password" value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)}  />
+              </div>
+              
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        );
       case 'address':
         return (
           <div className="profile-form-section show">
@@ -147,24 +167,7 @@ const SubmitHandler = (e) => {
             </form>
           </div>
         );
-      case 'security':
-        return (
-          <div className="profile-form-section show">
-            <h2>Security & Authentication</h2>
-            <form>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Confirm Password</label>
-                <input type="text" id="password" name="password" value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)}  />
-              </div>
-              
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        );
+      
       default:
         return null;
     }
@@ -204,20 +207,21 @@ const SubmitHandler = (e) => {
           </div>
           <div
             className={`profile-nav-item ${
-              activeForm === 'address' ? 'active' : ''
-            }`}
-            onClick={() => showForm('address')}
-          >
-            Address
-          </div>
-          <div
-            className={`profile-nav-item ${
               activeForm === 'security' ? 'active' : ''
             }`}
             onClick={() => showForm('security')}
           >
             Security
           </div>
+          <div
+            className={`profile-nav-item ${
+              activeForm === 'address' ? 'active' : ''
+            }`}
+            onClick={() => showForm('address')}
+          >
+            Address
+          </div>
+        
           </div>
         </div>
         <div className="profile-form">{renderForm()}</div>

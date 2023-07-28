@@ -8,8 +8,8 @@ const cors = require("cors");
 const {notFound, errorHandler } = require("./middlewares/errorMiddleware");
 dotenv.config();
 const PORT = process.env.PORT || 5000;
-
-mongoose.connect("mongodb+srv://gouravsingh2103:123456781@cluster0.gjzjfon.mongodb.net/", {
+const DATABASE = process.env.DATABASE;
+mongoose.connect(`${DATABASE}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
