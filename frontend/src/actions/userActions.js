@@ -9,7 +9,7 @@ export const login = (email, password) => async (dispatch) => {
       headers: { 'Content-Type': "application/json" },
     };
 
-    const { data } = await axios.post("http://localhost:5000/api/users/login", {
+    const { data } = await axios.post("https://complaint-fd66.onrender.com/api/users/login", {
       email,
       password,
     }, config);
@@ -47,7 +47,7 @@ export const register = ( name,email, password,gender, division,location,number 
     };
 
 
-    const { data } = await axios.post("http://localhost:5000/api/users/register", {
+    const { data } = await axios.post("https://complaint-fd66.onrender.com/api/users/register", {
       name,email, password,gender, division,location,number , myid
     }, config);
 
@@ -91,7 +91,7 @@ export const updateProfile = (user) => async (dispatch , getState) => {
     };
 
 
-    const {data} = await axios.post("http://localhost:5000/api/users/profile" , user , config);
+    const {data} = await axios.post("https://complaint-fd66.onrender.com/api/users/profile" , user , config);
     dispatch ({ type: USER_UPDATE_SUCCESS , payload: data});
     dispatch ({ type: USER_LOGIN_SUCCESS , payload: data});
 
